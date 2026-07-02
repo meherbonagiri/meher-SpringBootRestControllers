@@ -16,29 +16,36 @@ public class EmployeeController {
     @Autowired
     private EmployeeService employeeService;
 
-    @GetMapping
-    public List<Employee> getAllEmployees(){
+    @GetMapping("/health")
+    public String checkHealth() {
+        return "Application is running fine";
 
-       return employeeService.getAllEmployees();
+    }
+
+    @GetMapping
+    public List<Employee> getAllEmployees() {
+
+        return employeeService.getAllEmployees();
 
     }
 
     @GetMapping("/{id}")
-    public Employee getEmployeeById(@PathVariable int id){
+    public Employee getEmployeeById(@PathVariable int id) {
 
         return employeeService.getEmployeeById(id);
 
     }
 
     @PostMapping
-    public Employee createEmployee(@RequestBody Employee employee){
+    public Employee createEmployee(@RequestBody Employee employee) {
 
         return employeeService.createEmployee(employee);
 
 
     }
+
     @DeleteMapping("/{id}")
-    public Employee deleteEmployeeById(@PathVariable int id){
+    public Employee deleteEmployeeById(@PathVariable int id) {
 
         return employeeService.deleteEmployeeById(id);
 
@@ -46,14 +53,12 @@ public class EmployeeController {
     }
 
     @PutMapping("/{id}")
-    public Employee updateEmployee(int id, Employee employee){
+    public Employee updateEmployee(int id, Employee employee) {
 
         return employeeService.updateEmployee(id, employee);
 
 
     }
-
-
 
 
 }

@@ -9,8 +9,6 @@ import java.util.List;
 import java.util.Map;
 @Service
 public class EmployeeService {
-
-
     Map<Integer, Employee> employeeMap = new HashMap<>();
 
     public EmployeeService() {
@@ -19,11 +17,10 @@ public class EmployeeService {
         employeeMap.put(1626, new Employee(1626, "Nithin", 18000.00, "Sr Java Full Stack Developer", "Java, Python, React, AI"));
         employeeMap.put(1627, new Employee(1627, "Sreeja", 12000.00, "Java Developer", "Java, Python, React, Git, SQL"));
         employeeMap.put(1628, new Employee(1628, "Drawin", 19000.00, "Sr Technical Manager", "Java, Python, React, MongoDB"));
-
+        employeeMap.put(1629, new Employee(1629, "Rohit", 20000.00, "Sr Technical Manager", "Java, Python, React, MongoDB"));
     }
 
     public List<Employee> getAllEmployees(){
-
         return new ArrayList<>(employeeMap.values());
 
     }
